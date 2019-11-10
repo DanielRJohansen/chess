@@ -1,7 +1,7 @@
 #pragma once
 
 #include <iostream>
-
+#include <stack>
 using namespace std;
 
 class ChessTree
@@ -14,22 +14,21 @@ public:
 	int getCols();
 	int goal[2];
 
-	int* explored[2500][2] = { 0,0 };
-	int* exploredhead;
+	int **explored;
 	~ChessTree();
 
 
 protected:
-	int route[100];
-	
 	
 	int start[2];
-	int actions[8][2] = { {-1, 2}, {1, 2}, {-2, 1}, {2, 1}, {-2, -1}, {2, -1}, {-1, -2}, {1, -2} };
+	stack<int> route;
 
-	//used by children only
-	
+	//used by children only	
 	int getRows();
 private:
+
+	void initExplored();
+	void clearExplored();
 	int cols = 4;
 	int rows = 4;
 };
