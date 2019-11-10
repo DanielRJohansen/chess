@@ -34,6 +34,7 @@ bool isNull(NODE* n)
 
 bool NODE::takeAction(int* cols, int* rows, int* goalx, int* goaly, int** explored, stack<int> *route)
 {
+
 	bool goalfound = false;
 
 	if (leaf)
@@ -86,6 +87,7 @@ bool NODE::takeAction(int* cols, int* rows, int* goalx, int* goaly, int** explor
 	else 
 	{
 		for (int i = 0; i < 8; i++)
+		{
 			if (!isNull(children[i]))
 			{
 				goalfound = children[i]->takeAction(cols, rows, goalx, goaly, explored, route);
@@ -99,9 +101,10 @@ bool NODE::takeAction(int* cols, int* rows, int* goalx, int* goaly, int** explor
 			}				
 		}
 	}
-	
 	return false;
 }
+
+
 
 
 void NODE::clearNode()

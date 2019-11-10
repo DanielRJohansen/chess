@@ -5,21 +5,16 @@
 #include <stack>
 using namespace std;
 
-void test(stack<int>* s)
-{
-	s->push(11);
-}
+
 
 int main()
 {
-	int cols = 3000;
-	int rows = 3000;
+	int cols = 300;
+	int rows = 300;
 	int start[2] = { 2,2 };
-	int goal[2] = { 2070,2510 };
+	int goal[2] = { 270,251 };
 	
-	stack <int> s;
 
-	test(&s);
 
 
 	
